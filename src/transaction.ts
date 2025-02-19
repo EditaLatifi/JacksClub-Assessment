@@ -2,6 +2,10 @@ import { DynamoDBClient, GetItemCommand, TransactWriteItemsCommand, UpdateItemCo
 import { v4 as uuidv4 } from 'uuid';
 import { getUserBalance } from './getBalance';
 
+const dynamoDbClient = new DynamoDBClient({
+    region: 'eu-central-1',
+  });
+
 interface TransactParams {
   idempotentKey: string;
   userId: string;
